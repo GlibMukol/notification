@@ -1,0 +1,41 @@
+.container {
+  position: relative;
+  width: 100%;
+  min-height: 40px;
+  margin: 0.5rem;
+  height: content;
+  display: grid;
+  grid-template-areas:
+    "body body date"
+    "body body time";
+  grid-template-columns: 3fr;
+}
+
+.body {
+  padding: 0.5rem;
+  grid-area: body;
+  align-self: center;
+}
+
+.date_stamp {
+  padding: 0.5rem;
+  grid-area: date;
+}
+.time_stamp {
+  padding: 0.5rem;
+  grid-area: time;
+}
+
+.info {
+  border: 1px solid #4989ff;
+  box-shadow: 0px 0px 6px 0px #4989ff;
+}
+.warning {
+  border: 1px solid #ffef49;
+  box-shadow: 0px 0px 6px 0px #ffef49;
+}
+
+.error {
+  border: 1px solid #ff4949;
+  box-shadow: 0px 0px 6px 0px #ff4949;
+}

@@ -1,0 +1,15 @@
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: rgb(223, 223, 223);
+  margin: 0;
+  padding: 0px;
+}
+
+hr {
+  width: 99%;
+  border: 1px solid rgb(223, 223, 223);
+  box-shadow: 0 0 1px rgb(223, 223, 223);
+  margin: 15px 0;
+}

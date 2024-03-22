@@ -1,17 +1,23 @@
 import { ChangeEvent, FormEvent, useState } from 'react';
 import styles from './styles.module.css';
 import { EMessageType } from '../../consts';
+import { useAppDispatch } from '../../hooks/redux';
+import { setMessage } from '../../store/reducers/messages';
 
 const MessageInput = () => {
 
+    const dispatch = useAppDispatch();
     const [messageText, setMessageText] = useState('')
-    const [messageType, setMessageType] = useState('info');
+    const [messageType, setMessageType] = useState(EMessageType.info);
 
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
-        console.log('handleSubmit', e.target);
-        console.log('messageType', messageType)
-        console.log('messageText', messageText);
+        if (!messageText) return;
+        dispatch(setMessage({
+            value: messageText,
+            type: messageType,
+            date: Date.now()
+        }))
         setMessageText('');
     }
 

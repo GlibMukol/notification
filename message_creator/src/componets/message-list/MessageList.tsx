@@ -1,32 +1,14 @@
 import styles from './styles.module.css'
 import { Message } from '../message/index'
+import { useAppSelector } from '../../hooks/redux'
+import { TMessage } from '../../store/reducers/messages'
 
-const mockMessages = [
-    {
-        message: 'lorem',
-        data: 'datsa',
-        variant: 'variants'
-    },
-    {
-        message: 'lorem',
-        data: 'datsa',
-        variant: 'variants'
-    },
-    {
-        message: 'lorem',
-        data: 'datsa',
-        variant: 'variants'
-    },
-    {
-        message: 'lorem',
-        data: 'datsa',
-        variant: 'variants'
-    },
-]
+
 const MessageList = () => {
+    const messages = useAppSelector((state) => state.messageReduser.messages);
     return (
         <div className={styles.container}>
-            {mockMessages.map(() => <Message />)}
+            {messages.map((data: TMessage) => <Message data={data} />)}
         </div>
     )
 }
